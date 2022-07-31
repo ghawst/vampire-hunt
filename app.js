@@ -327,7 +327,6 @@ function endGame() {
     scoreEndE.textContent = currentScore;
     updateHighScore(currentScore);
     highScoreEndE.textContent = getHighScore();
-    console.log(getHighScore());
 }
 
 function Restart() {
