@@ -198,4 +198,5 @@ h1 {
     width: 100%;
     -webkit-text-stroke-width: .025vw;
     -webkit-text-stroke-color: black;
+    pointer-events: none;
 }
