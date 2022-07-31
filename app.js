@@ -27,8 +27,9 @@ const mousedownInterval = 10;
 let mousePos = {};
 
 const updateInterval = 10;
-let batSpawnInterval = 3000;
-const batSpawnIntervalMin = 100;
+const batSpawnIntervalStart = 3000;
+let batSpawnInterval;
+const batSpawnIntervalMin = 250;
 const batSpawnIntervalModifier = 20;
 
 let updateI = null;
@@ -157,6 +158,7 @@ function Start() {
             updateI = setInterval(Update, updateInterval);
         }
         if (makeBatI === null) {
+            batSpawnInterval = batSpawnIntervalStart;
             makeBatI = setInterval(makeBat, batSpawnInterval);
         }
         menuContainer.style.display = 'none';
