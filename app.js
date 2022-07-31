@@ -1,3 +1,24 @@
+const Vector2 = function (x, y) {
+    this.x = x;
+    this.y = y;
+}
+
+Vector2.prototype.normalize = function () {
+    const length = Math.sqrt(this.x * this.x + this.y * this.y);
+    this.x = this.x / length;
+    this.y = this.y / length;
+}
+
+HTMLElement.prototype.moveTowards = function (target) {
+    const objRect = this.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    const targetPos = new Vector2(targetRect.left + targetRect.width / 2 - objRect.width / 2, targetRect.top + targetRect.height / 2 - objRect.height / 2);
+    const direction = new Vector2(targetPos.x - objRect.left, targetPos.y - objRect.top);
+    direction.normalize();
+    this.style.left = (objRect.left + direction.x) + 'px';
+    this.style.top = (objRect.top + direction.y) + 'px';
+}
+
 const draggables = document.querySelectorAll('.draggable');
 
 let mousedownID = -1;
@@ -267,27 +288,6 @@ function poofShow(top, left) {
         poofDiv.style.transform = 'scale(1.5)';
     }, 10);
     setTimeout(() => poofDiv.remove(), poofHideDelay);
-}
-
-const Vector2 = function (x, y) {
-    this.x = x;
-    this.y = y;
-}
-
-Vector2.prototype.normalize = function () {
-    const length = Math.sqrt(this.x * this.x + this.y * this.y);
-    this.x = this.x / length;
-    this.y = this.y / length;
-}
-
-HTMLElement.prototype.moveTowards = function (target) {
-    const objRect = this.getBoundingClientRect();
-    const targetRect = target.getBoundingClientRect();
-    const targetPos = new Vector2(targetRect.left + targetRect.width / 2 - objRect.width / 2, targetRect.top + targetRect.height / 2 - objRect.height / 2);
-    const direction = new Vector2(targetPos.x - objRect.left, targetPos.y - objRect.top);
-    direction.normalize();
-    this.style.left = (objRect.left + direction.x) + 'px';
-    this.style.top = (objRect.top + direction.y) + 'px';
 }
 
 function crystalTakeDamage(multiplier = 1) {
