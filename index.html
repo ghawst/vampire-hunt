@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vampire Hunt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Cinzel+Decorative:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <div id="menu-container" class="unselectable">
+        <div id="menu" class="menu unselectable">
+            <div>
+                <h1>Vampire Hunt</h1>
+                <hr>
+            </div>
+            <div id="score-board">
+                <p class="score-display">High score: <span id="high-score-start">0</span></p>
+            </div>
+            <div id="buttons-container">
+                <button id="startBtn">Start</button>
+            </div>
+        </div>
+        <div id="end-screen" class="menu unselectable">
+            <div>
+                <h1>Game Over</h1>
+                <hr>
+            </div>
+            <div id="score-board">
+                <p class="score-display">Score: <span id="score">0</span></p>
+                <p class="high-score-display">High score: <span id="high-score">0</span></p>
+            </div>
+            <div id="buttons-container">
+                <button id="restartBtn">Restart</button>
+            </div>
+        </div>
+    </div>
+    <div id="in-game-score-display">
+        <span id="in-game-score">1000</span>
+    </div>
+
+    <div id="container" class="unselectable">
+        <div id="lantern" class="draggable unselectable">
+            <div id="lantern-border" class="unselectable"></div>
+        </div>
+
+        <div id="crystal" class="draggable unselectable">
+            <div class="hitbox unselectable"></div>
+            <img class="unselectable" src="./imgs/crystal.png" alt="crystal">
+        </div>
+
+        <div id="originalBat" class="bat unselectable">
+            <img class="bat-body unselectable" src="./imgs/bat-body.png" alt="bat body">
+            <img class="bat-eyes unselectable" src="./imgs/bat-eyes-1.png" alt="bat eyes">
+        </div>
+
+        <div id="originalPoof" class="poof">
+            <img class="poof-image" src="./imgs//dust-cloud-13.png" alt="poof cloud">
+        </div>
+
+        <div id="health-bar" class="unselectable"></div>
+    </div>
+</body>
+
+</html>
