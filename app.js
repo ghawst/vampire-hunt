@@ -54,7 +54,7 @@ const healthBar = document.querySelector('#health-bar');
 const playerHealthMax = 100;
 let playerHealth = playerHealthMax;
 const damageTick = .1;
-const healTick = .1;
+const healTick = .05;
 
 const startBtn = document.querySelector('#startBtn');
 startBtn.addEventListener('click', () => {
