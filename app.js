@@ -28,7 +28,7 @@ let mousePos = {};
 
 const updateInterval = 10;
 let batSpawnInterval = 3000;
-const batSpawnIntervalMin = 700;
+const batSpawnIntervalMin = 100;
 const batSpawnIntervalModifier = 20;
 
 let updateI = null;
@@ -53,7 +53,7 @@ const crystalHitbox = document.querySelector('#crystal .hitbox');
 const healthBar = document.querySelector('#health-bar');
 const playerHealthMax = 100;
 let playerHealth = playerHealthMax;
-const damageTick = .1;
+const damageTick = .15;
 const healTick = .05;
 
 const startBtn = document.querySelector('#startBtn');
