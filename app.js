@@ -84,7 +84,7 @@ const highScoreStartE = document.querySelector('#high-score-start');
 highScoreStartE.textContent = getHighScore();
 
 if (getHighScore() === null) {
-    localStorage.setItem('highScore') = 0;
+    localStorage.setItem('highScore', 0);
 }
 
 document.addEventListener('mousemove', (e) => {
