@@ -28,7 +28,7 @@ let mousePos = {};
 
 const updateInterval = 10;
 let batSpawnInterval = 3000;
-const batSpawnIntervalMin = 1200;
+const batSpawnIntervalMin = 700;
 const batSpawnIntervalModifier = 20;
 
 let updateI = null;

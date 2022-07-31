@@ -19,6 +19,8 @@ body {
     height: 100%;
     overflow: hidden;
     margin: 0;
+    display: flex;
+    background-color: black;
 }
 
 #container {
@@ -28,6 +30,8 @@ body {
     position: absolute;
     max-width: 1920px;
     max-height: 1080px;
+    border-right: .25vh solid white;
+    border-bottom: .25vh solid white;
 }
 
 #lantern {
