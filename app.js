@@ -52,15 +52,19 @@ restartBtn.addEventListener('click', () => {
     Restart();
 });
 
-localStorage.setItem('highScore', 1000);
 let currentScore = 0;
-let highScore = 5;
+let highScore = 0;
 const scoreInGameE = document.querySelector('#in-game-score');
 updateScore();
 const scoreBatValue = 5;
 const scoreEndE = document.querySelector('#score');
 const highScoreEndE = document.querySelector('#high-score');
 const highScoreStartE = document.querySelector('#high-score-start');
+highScoreStartE.textContent = getHighScore();
+
+if (getHighScore() === null) {
+    localStorage.setItem('highScore') = 0;
+}
 
 document.addEventListener('mousemove', (e) => {
     mousePos.x = e.pageX;
@@ -321,6 +325,8 @@ function endGame() {
     menuContainer.style.display = 'flex';
     endScreen.style.display = 'flex';
     scoreEndE.textContent = currentScore;
+    updateHighScore(currentScore);
+    highScoreEndE.textContent = getHighScore();
 }
 
 function Restart() {
@@ -338,6 +344,16 @@ function Restart() {
 function updateScore(value = 0) {
     currentScore += value;
     scoreInGameE.textContent = currentScore;
+}
+
+function updateHighScore(value) {
+    if (value > getHighScore()) {
+        localStorage.setItem('highScore', value);
+    }
+}
+
+function getHighScore() {
+    return localStorage.getItem('highScore');
 }
 
 
