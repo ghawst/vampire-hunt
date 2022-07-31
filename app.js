@@ -54,7 +54,7 @@ restartBtn.addEventListener('click', () => {
 
 localStorage.setItem('highScore', 1000);
 let currentScore = 0;
-let highScore = 0;
+let highScore = 5;
 const scoreInGameE = document.querySelector('#in-game-score');
 updateScore();
 const scoreBatValue = 5;
